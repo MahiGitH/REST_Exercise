@@ -2,6 +2,11 @@ const { response } = require('express')
 const express = require('express')
 const app = express()
 app.use(express.json());
+
+//7
+const morgan = require('morgan')
+app.use(morgan('tiny'))
+
 let persons = 
 [
   { 
@@ -44,7 +49,6 @@ app.get('/api/info', (request, response) => {
   response.send (`phonebook has info for ${arryCount} people </br> 
   <br>${moment}`);
 })
-
 
 // #3 displaying the information for a single phonebook entry
 app.get('/api/persons/:id', (request, response) => {  
@@ -121,6 +125,12 @@ app.post("/api/persons", (request, response) => {
   response.json(person);
 });
 
+//8
+  morgan.token('object', function (request, res) { 
+  console.log("object", request.body)
+  return `${JSON.stringify(req.body)}` })
+
+app.use(morgan(':method :url :status :response-time :req[header] :object'))
 const PORT = 3001
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)

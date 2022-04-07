@@ -1,0 +1,29 @@
+{
+  "name": "phonebook_exercise",
+  "version": "1.0.0",
+  "description": "a Node application that returns a hardcoded list of phonebook entries from the address ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mahi Tsegaye",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/MahiGitH/REST_Exercise.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MahiGitH/REST_Exercise/issues"
+  },
+  "homepage": "https://github.com/MahiGitH/REST_Exercise#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "moment": "^2.29.2",
+    "moment-timezone": "^0.5.34"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
